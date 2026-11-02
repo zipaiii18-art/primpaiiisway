@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#4d0e13"><title>Primpaii's Way</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Lora:wght@400;500;600&family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Poppins:wght@400;500;600&family=EB+Garamond:wght@400;500;600&family=Josefin+Sans:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#EEE4DA;--sand:#E5D1C5;--pink:#AA8584;--wine:#4D0E13;--ink:#594448;--muted:#8a6d6c;--paper:#FBF7F2;--line:#E5D1C5;--milk:#FEEFF3;--mauve:#AA8584;--blush:#FDE3EB;--prose:#F2B0CD;--sweet:#F195BC;--baby:#D2ECFB;--shadow:0 14px 40px #4d0e1310;--font:'DM Sans',sans-serif}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#FBF7F2,#FEEFF3 45%,#EEE4DA);background-attachment:fixed;color:var(--ink);font-family:var(--font);min-height:100vh}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:1440px;margin:auto;padding:24px;display:grid;grid-template-columns:245px minmax(0,1fr);gap:22px}.sidebar{background:var(--wine);color:var(--cream);border-radius:26px;padding:25px 17px;min-height:calc(100vh - 48px);position:sticky;top:24px;height:calc(100vh - 48px);display:flex;flex-direction:column;box-shadow:var(--shadow)}.brand{text-align:center;padding:10px 5px 25px}.brand h1{font-family:'Parisienne','Cormorant Garamond',cursive;font-size:40px;font-weight:400;letter-spacing:.5px;line-height:1.15;margin:0;color:#FEEFF3;text-shadow:0 2px 14px #f2b0cd33}.brand .orn{display:block;text-align:center;font-size:clamp(11px,1vw,13px);letter-spacing:1px;line-height:1.4;color:#E3AEB6;margin:6px auto 0;white-space:nowrap;max-width:100%;overflow:hidden}.brand small{display:block;color:#cba9a2;font-size:9px;letter-spacing:3px;margin-top:12px}.nav{display:grid;gap:8px}.nav button{border:0;background:transparent;color:#e5ccc4;padding:12px 14px;text-align:left;border-radius:14px;font-size:13px;transition:.2s}.nav button:hover,.nav button.active{background:#ffffff19;color:#fff7f0}.nav button span{display:inline-block;width:25px;color:#d7aaa5;font-size:15px}.side-note{margin-top:auto;border-top:1px solid #ffffff25;padding:17px 8px 0;color:#cba9a2;font-size:11px;line-height:1.7}.main{min-width:0}.topbar{display:flex;justify-content:space-between;align-items:center;margin:3px 2px 20px;gap:15px}.eyebrow{font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}.topbar h2{font:500 27px 'Cormorant Garamond',serif;margin:3px 0}.today{font-size:12px;color:var(--muted);background:#ffffff9c;border:1px solid #fff;border-radius:30px;padding:10px 15px}.page{display:none}.page.active{display:block}.welcome{background:linear-gradient(110deg,#4d0e13,#74303a 70%,#8b5058);color:#f5e7de;border-radius:23px;padding:25px 29px;margin-bottom:17px;position:relative;overflow:hidden;box-shadow:var(--shadow)}.welcome:after{content:'ꕤ';position:absolute;right:34px;top:-22px;font-size:130px;color:#ffffff12;transform:rotate(18deg)}.welcome p{font-size:12px;color:#e3c9c2;margin:0 0 7px}.welcome h3{font:500 29px 'Cormorant Garamond',serif;margin:0 0 8px}.welcome small{font-size:11px;color:#e3c9c2}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-bottom:17px}.stat,.panel,.form-card{background:#fffaf6d9;border:1px solid #fff;border-radius:19px;padding:17px 18px;box-shadow:var(--shadow)}.stat .label{font-size:11px;color:var(--muted)}.stat .value{font:500 25px 'Cormorant Garamond',serif;margin-top:7px;color:var(--wine)}.stat .hint{font-size:10px;color:#aa918a;margin-top:3px}.panel{margin-bottom:16px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}.panel h3,.form-card h3{font:500 21px 'Cormorant Garamond',serif;margin:0}.muted{color:var(--muted);font-size:11px}.btn{border:0;border-radius:12px;padding:10px 14px;background:var(--wine);color:#fff4ed;font-size:11px}.btn.soft{background:#f0e2d9;color:var(--wine);border:1px solid #e5d1c5}.btn.ghost{background:transparent;color:var(--wine);border:1px solid var(--line)}.btn.danger{background:#f7e5e2;color:#8d3038}.btn.small{padding:7px 10px;font-size:10px}.actions{display:flex;gap:7px;flex-wrap:wrap}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:760px;font-size:11px}th{text-align:left;color:#8b706a;font-weight:600;background:#f7eee8;white-space:nowrap}th,td{padding:11px 10px;border-bottom:1px solid #f0e5de}td{color:#594448}tbody tr:hover{background:#fff8f3}.pill{display:inline-block;padding:5px 9px;border-radius:20px;background:#f1e4dc;color:#7a4a4a;font-size:10px;white-space:nowrap}.pill.green{background:#e8eee4;color:#5d7251}.pill.red{background:#f6e2df;color:#9a4247}.pill.gold{background:#f5eddc;color:#94703a}.empty{text-align:center;padding:30px;color:#a58e87;font-size:12px}.form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.field{display:grid;gap:6px}.field label{font-size:10px;color:#806a65}.field input,.field select,.field textarea{width:100%;border:1px solid #eadbd2;background:#fffdfa;border-radius:10px;padding:10px 11px;font-size:12px;color:var(--ink);outline:none}.field input:focus,.field select:focus{border-color:#c8a49f;box-shadow:0 0 0 3px #c8a49f25}.field.full{grid-column:1/-1}.form-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:16px}.toolbarline{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.toolbarline input,.toolbarline select{border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:#fffaf6;font-size:11px;color:var(--ink)}.two-col{display:grid;grid-template-columns:1.3fr .7fr;gap:15px}.rank-list{display:grid;gap:11px}.rank-row{display:flex;align-items:center;gap:10px;font-size:11px}.rank-bar{height:7px;background:#f0e3db;border-radius:20px;flex:1;overflow:hidden}.rank-bar i{display:block;height:100%;background:linear-gradient(90deg,#c8a49f,#4d0e13);border-radius:20px}.rank-row b{font-weight:600;min-width:20px;text-align:right}.setting-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid #f0e5de}.setting-row:last-child{border:0}.setting-row strong{display:block;font-size:12px;font-weight:600}.setting-row small{font-size:10px;color:var(--muted)}.setting-row select,.setting-row input{max-width:260px;width:48%;padding:9px;border:1px solid var(--line);border-radius:10px;background:#fffdfa;font-size:11px}.swatches{display:flex;gap:8px}.swatch{width:30px;height:30px;border-radius:50%;border:2px solid white;box-shadow:0 0 0 1px #d7c5ba}.music-controls{display:flex;gap:8px;align-items:center}.notice{padding:12px 14px;border-radius:12px;background:#f3e8df;color:#77534e;font-size:11px;line-height:1.6;margin:10px 0}.sheet-frame{width:100%;height:310px;border:1px solid var(--line);border-radius:13px;background:#fff}.footer{text-align:center;color:#a78f88;font:italic 12px 'Cormorant Garamond',serif;padding:12px}.toast{position:fixed;bottom:22px;right:22px;background:var(--wine);color:#fff4ed;padding:12px 17px;border-radius:13px;font-size:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s;pointer-events:none;z-index:9}.toast.show{opacity:1;transform:translateY(0)}.mobile-brand{display:none}
+@media(max-width:900px){.app{grid-template-columns:1fr;padding:13px}.sidebar{position:static;height:auto;min-height:0;padding:12px;border-radius:18px}.brand{padding:4px 0 10px}.brand h1{font-size:32px}.brand small{display:none}.brand .orn{margin-top:2px}.nav{display:flex;overflow:auto;gap:5px}.nav button{white-space:nowrap;padding:10px}.nav button span{width:auto;margin-right:6px}.side-note{display:none}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}.form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.topbar{align-items:flex-start}.today{font-size:10px}.welcome{padding:20px}.welcome h3{font-size:25px}.stats{gap:9px}.stat{padding:13px}.stat .value{font-size:22px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.setting-row{align-items:flex-start;flex-direction:column}.setting-row select,.setting-row input{width:100%;max-width:none}}
+
+/* ── floating decorations ── */
+.app{position:relative;z-index:1}.decor{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.float-deco{position:absolute;color:var(--mauve);opacity:0;line-height:1;white-space:nowrap;user-select:none;animation:floatUp var(--dur,18s) ease-in-out var(--delay,0s) infinite;will-change:transform,opacity}
+@keyframes floatUp{0%{opacity:0;transform:translateY(40px) rotate(calc(var(--rot) * -1))}20%{opacity:var(--o,.4)}50%{transform:translateY(-20px) rotate(var(--rot))}80%{opacity:var(--o,.4)}100%{opacity:0;transform:translateY(-90px) rotate(calc(var(--rot) * -1))}}
+@media(prefers-reduced-motion:reduce){.float-deco{animation:none;opacity:.25}}
+/* ── evening mode ── */
+body.dark{--paper:#2a1b1e;--ink:#f3e4dc;--muted:#c9aba6;--line:#4f3438;background:linear-gradient(135deg,#1f1416,#2c1a1e 55%,#231619);background-attachment:fixed}
+body.dark .sidebar{background:#180d10}body.dark .stat,body.dark .panel,body.dark .form-card{background:#33222599;border-color:#4f3438}
+body.dark td{color:#ead8d0;border-color:#4f3438}body.dark th{background:#3b282b;color:#d7b9b2;border-color:#4f3438}body.dark tbody tr:hover{background:#3a272a}
+body.dark .field input,body.dark .field select,body.dark .field textarea,body.dark .toolbarline input,body.dark .toolbarline select,body.dark .setting-row select,body.dark .setting-row input{background:#2a1b1e;border-color:#4f3438;color:var(--ink)}
+body.dark .btn.soft{background:#4a2f34;color:#f6e2dc;border-color:#5d3e43}body.dark .btn.ghost{color:#f0d9d2;border-color:#5d3e43}body.dark .btn.danger{background:#5a2a30;color:#f7d4d4}
+body.dark .stat .value{color:#F2B0CD}body.dark .notice{background:#3a272a;color:#e3c8c1}body.dark .pill{background:#4a3034;color:#f0d3cf}body.dark .today{background:#33222599;border-color:#4f3438}
+body.dark .setting-row{border-color:#4f3438}body.dark .rank-bar{background:#4a3034}body.dark .float-deco{color:#c99aa0}
+/* ── My Little Playlist ── */
+.playlist-panel{background:linear-gradient(160deg,#FEEFF3,#FDE3EB 55%,#eef7fd)}
+.pl-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:14px}
+.pl-card{background:#ffffffb8;border:1px solid #fff;border-radius:18px;padding:15px;min-width:0}
+.pl-card h4{margin:0 0 10px;font:500 17px 'Cormorant Garamond',serif;color:var(--wine)}
+.np{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.np-art{width:54px;height:54px;flex:none;border-radius:16px;display:grid;place-items:center;font-size:22px;color:#fff;background:linear-gradient(135deg,#F2B0CD,#F195BC 55%,#D2ECFB);box-shadow:0 8px 18px #F195BC40}
+.np-art.on{animation:softPulse 2.6s ease-in-out infinite}@keyframes softPulse{50%{transform:scale(1.06)}}
+.np-info{min-width:0;flex:1}.np-info strong{display:block;font:500 19px 'Cormorant Garamond',serif;color:var(--wine);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.np-info small{display:block;font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.src-tag{display:inline-block;font-size:9px;letter-spacing:.4px;padding:3px 8px;border-radius:20px;background:#FDE3EB;color:#a24a72;font-weight:600;white-space:nowrap}
+.src-tag.spotify{background:#e2f5e8;color:#2f7a4b}.src-tag.youtube{background:#fde6e6;color:#b43b3b}.src-tag.url{background:#D2ECFB;color:#3c6f8f}
+.embed-box{border-radius:14px;overflow:hidden;margin-bottom:10px}.embed-box:empty{display:none}
+.embed-box iframe{display:block;width:100%;border:0;border-radius:14px}
+.embed-box.yt{aspect-ratio:16/9;background:#000}.embed-box.yt iframe{height:100%}.embed-box.yt.compact{aspect-ratio:auto;height:200px;max-width:356px;margin-inline:auto}
+.progress{display:flex;align-items:center;gap:8px;font-size:10px;color:var(--muted)}.progress span{min-width:32px;text-align:center}
+.m-range{flex:1;accent-color:#F195BC;min-width:60px;cursor:pointer}.m-range:disabled{opacity:.4;cursor:not-allowed}
+.m-ctrls{display:flex;justify-content:center;align-items:center;gap:8px;margin:12px 0}
+.ib{min-width:36px;height:36px;padding:0 8px;border-radius:999px;border:1px solid #F2B0CD99;background:#fff;color:#a24a72;font-size:13px;display:inline-grid;place-items:center;transition:.2s;line-height:1}
+.ib:hover:not(:disabled){background:#FDE3EB}.ib:disabled{opacity:.35;cursor:not-allowed}.ib[aria-pressed=true],.ib.on{background:#F2B0CD;color:#fff;border-color:#F2B0CD}
+.ib.big{width:52px;height:52px;font-size:17px;background:linear-gradient(135deg,#F195BC,#F2B0CD);color:#fff;border:0;box-shadow:0 8px 20px #F195BC55}
+.m-vol{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:10px;color:var(--muted)}.m-vol .m-range{max-width:180px}
+.m-status{font-size:11px;margin-top:10px;padding:8px 11px;border-radius:11px;background:#D2ECFB99;color:#3c6f8f;line-height:1.5}.m-status:empty{display:none}.m-status.err{background:#fde3e3;color:#9a4247}
+.m-tabs{display:flex;gap:4px;background:#FDE3EB;border-radius:14px;padding:4px;margin-bottom:12px}
+.m-tabs button{flex:1;border:0;background:transparent;border-radius:11px;padding:9px 4px;font-size:11px;color:#a24a72;min-height:38px}.m-tabs button.active{background:#fff;box-shadow:0 3px 10px #F195BC30;color:var(--wine);font-weight:600}
+.pl-add .field{margin-bottom:9px}.pl-add .field input{border-color:#F2B0CD80}.pl-help{font-size:10px;color:var(--muted);line-height:1.6;margin:2px 0 10px}
+.btn.pink{background:linear-gradient(135deg,#F195BC,#e889b2);color:#fff}
+.sp-account{margin-top:12px;padding-top:12px;border-top:1px dashed #F2B0CD;font-size:11px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);line-height:1.5}.sp-account[hidden]{display:none}
+.sp-pl{width:100%;display:grid;gap:6px;max-height:220px;overflow:auto}.sp-pl div{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#fff;border-radius:11px;padding:6px 6px 6px 10px}.sp-pl span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pl-library{margin-top:14px}.pl-library .panel-head{margin-bottom:10px}
+.chips{display:flex;gap:6px}.chip{border:1px solid #F2B0CD;background:#fff;color:#a24a72;border-radius:20px;padding:7px 12px;font-size:10px;min-height:32px}.chip.active{background:#F2B0CD;color:#fff}
+.pl-list{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.pl-item{display:flex;align-items:center;gap:10px;padding:9px 11px;background:#ffffffc7;border:1px solid #fff;border-radius:15px;transition:.2s}
+.pl-item.current{border-color:#F2B0CD;box-shadow:0 4px 14px #F195BC25;background:#fff}
+.pl-item .ib.fav{border:0;background:transparent;font-size:16px;min-width:30px;color:#F195BC}
+.pl-meta{flex:1;min-width:0}.pl-meta strong{display:block;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pl-meta small{font-size:10px;color:var(--muted)}
+.pl-btns{display:flex;gap:4px}.pl-btns .ib{min-width:32px;height:32px;font-size:11px}.pl-btns .ib.del{color:#9a4247}
+.pl-item.editing input{flex:1;min-width:0;border:1px solid #F2B0CD;border-radius:10px;padding:8px;font-size:12px;background:#fff;color:var(--ink)}
+.pl-empty{text-align:center;padding:22px;color:#b0848f;font-size:12px}
+.mini-player{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:8;display:flex;align-items:center;gap:6px;padding:6px 7px 6px 7px;background:#fff9fbf2;border:1px solid #F2B0CD;border-radius:40px;box-shadow:0 12px 30px #4d0e1320;width:330px;max-width:calc(100vw - 24px);backdrop-filter:blur(8px)}
+.mini-player[hidden]{display:none}.mini-meta{flex:1;min-width:0;padding:0 4px}.mini-meta strong{display:block;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--wine)}.mini-meta small{font-size:9px;color:var(--muted)}
+body.dark .playlist-panel{background:linear-gradient(160deg,#3a2329,#33222a 60%,#272637)}body.dark .pl-card,body.dark .pl-item,body.dark .sp-pl div{background:#ffffff0d;border-color:#ffffff14}body.dark .pl-item.current{background:#ffffff1a;border-color:#F2B0CD80}
+body.dark .ib,body.dark .chip{background:#ffffff10;color:#F2B0CD}body.dark .m-tabs{background:#ffffff10}body.dark .m-tabs button{color:#F2B0CD}body.dark .m-tabs button.active{background:#ffffff1c;color:#FDE3EB}
+body.dark .np-info strong,body.dark .pl-card h4,body.dark .mini-meta strong{color:#FDE3EB}body.dark .mini-player{background:#2e1d21f2}body.dark .pl-item.editing input{background:#2a1b1e}
+@media(max-width:900px){.pl-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.brand h1{font-size:30px}.brand .orn{font-size:11px}.pl-item{flex-wrap:wrap}.pl-btns{width:100%;justify-content:flex-end}.m-vol .m-range{max-width:none}.toast{left:12px;right:12px;bottom:76px;text-align:center}}
+@media(pointer:coarse){.btn{min-height:40px}.btn.small{min-height:36px}.ib{min-width:40px;height:40px}.pl-btns .ib{min-width:38px;height:38px}.nav button{min-height:42px}}
+body.has-mini .main{padding-bottom:64px}
+</style></head>
+<body>
+<div class="decor" id="decor" aria-hidden="true"></div>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><h1>Primpaii's Way</h1><div class="orn">꒷꒦︶꒷꒦︶ ๋ ࣭ ⭑꒷꒦</div><small>YOUR LITTLE BUSINESS JOURNAL</small></div>
+  <nav class="nav">
+    <button class="active" data-page="dashboard"><span>⌂</span>Dashboard</button>
+    <button data-page="recap"><span>✧</span>Rekapan</button>
+    <button data-page="reminder"><span>♡</span>Reminder</button>
+    <button data-page="history"><span>❀</span>Riwayat Order</button>
+    <button data-page="settings"><span>⚙</span>Setting</button>
+  </nav>
+  <div class="side-note">a little space to keep your business in bloom ♡<br><span id="sideCount">0 lovely orders saved</span></div>
+</aside>
+<main class="main">
+<header class="topbar"><div><div class="eyebrow">PERSONAL BUSINESS JOURNAL</div><h2 id="pageTitle">Dashboard</h2></div><div class="today" id="today"></div></header>
+
+<section class="page active" id="dashboard">
+ <div class="welcome"><p>✧ welcome back, lovely seller</p><h3>Your business, beautifully organised.</h3><small>Small steps, sweet progress. Keep your little business blooming ꕤ</small></div>
+ <div class="stats" id="stats"></div>
+ <div class="panel"><div class="panel-head"><div><h3>Recent orders</h3><div class="muted">A little look at your latest activity</div></div><button class="btn" id="newOrderBtn">＋ Add new order</button></div><div class="table-wrap" id="recentTable"></div></div>
+ <div class="panel"><div class="panel-head"><h3>Quick note</h3><span class="muted">your lovely reminder</span></div><div class="muted" id="dashboardNote">Your order recap will appear here once you add your first order ♡</div></div>
+</section>
+
+<section class="page" id="recap">
+ <div class="panel"><div class="panel-head"><div><h3>Order recap</h3><div class="muted">Every detail, neatly collected</div></div><div class="actions"><button class="btn soft" id="exportCsv">↓ Export CSV</button><button class="btn" id="recapAdd">＋ Add order</button></div></div>
+ <div class="toolbarline" style="margin-bottom:12px"><input id="recapSearch" placeholder="Search customer / app..."><input type="date" id="filterFrom"><input type="date" id="filterTo"><button class="btn ghost small" id="clearFilter">Reset filter</button></div>
+ <div class="table-wrap" id="recapTable"></div></div>
+ <div class="panel"><div class="panel-head"><h3>Financial summary</h3><span class="muted">calculated automatically</span></div><div class="stats" id="financeStats"></div></div>
+</section>
+
+<section class="page" id="reminder">
+ <div class="panel"><div class="panel-head"><div><h3>Renewal reminder</h3><div class="muted">Stay ahead of every renewal date ♡</div></div><span class="pill gold">Auto calculated</span></div>
+ <div class="notice">Sisa durasi dihitung dari tanggal order + durasi. Order yang sudah lewat tanggal habis akan ditandai <b>Expired</b>; order yang tinggal 3 hari atau kurang akan ditandai <b>Segera renewal</b>.</div>
+ <div class="toolbarline" style="margin-bottom:12px"><input id="reminderSearch" placeholder="Search customer / app..."><select id="reminderFilter"><option value="all">All reminders</option><option value="urgent">Segera renewal (≤ 3 hari)</option><option value="active">Masih aktif</option><option value="expired">Expired</option></select></div><div class="table-wrap" id="reminderTable"></div></div>
+</section>
+
+<section class="page" id="history">
+ <div class="two-col"><div class="panel"><div class="panel-head"><div><h3>Order history</h3><div class="muted">A sweet archive of your customers</div></div></div><div class="toolbarline" style="margin-bottom:12px"><input id="historySearch" placeholder="Search customer / app..."></div><div class="table-wrap" id="historyTable"></div></div>
+ <div class="panel"><div class="panel-head"><div><h3>Most ordered apps</h3><div class="muted">Your little bestsellers</div></div></div><div class="rank-list" id="appRanking"></div></div></div>
+</section>
+
+<section class="page" id="settings">
+ <div class="panel"><div class="panel-head"><div><h3>Personalise your space</h3><div class="muted">Make it feel like your own little corner</div></div></div>
+  <div class="setting-row"><div><strong>Colour mood</strong><small>Switch between soft light and evening mode</small></div><select id="themeSelect"><option value="light">Cream & Burgundy · Light</option><option value="dark">Burgundy · Evening</option></select></div>
+  <div class="setting-row"><div><strong>Typography</strong><small>Choose your favourite font pairing</small></div><select id="fontSelect"><option value="'DM Sans',sans-serif">DM Sans · clean</option><option value="'Cormorant Garamond',serif">Cormorant · romantic</option><option value="'Playfair Display',serif">Playfair · classic</option><option value="'Lora',serif">Lora · elegant</option><option value="'Quicksand',sans-serif">Quicksand · sweet</option><option value="'Nunito',sans-serif">Nunito · soft &amp; rounded</option><option value="'Manrope',sans-serif">Manrope · modern</option><option value="'Poppins',sans-serif">Poppins · friendly</option><option value="'EB Garamond',serif">EB Garamond · vintage</option><option value="'Josefin Sans',sans-serif">Josefin Sans · chic</option></select></div>
+  <div class="setting-row"><div><strong>Toolbar symbols</strong><small>Pick the little icons for your menu</small></div><select id="toolbarSelect"><option value="classic">⌂ ✧ ♡ ❀ ⚙ · Classic</option><option value="bloom">ꕤ ✿ ❀ ✾ ❁ · Bloom</option><option value="hearts">♡ ❥ ღ ♥ ♡ · Hearts</option><option value="stars">⋆ ✦ ✧ ⭑ ✩ · Stardust</option><option value="cloud">☁︎ ☾ ୨୧ ⋆ ✧ · Cloudy</option></select></div>
+  <div class="setting-row"><div><strong>Export / backup</strong><small>Download your orders as a backup file or restore them later</small></div><div class="actions"><button class="btn soft small" id="backupBtn">↓ Backup JSON</button><label class="btn ghost small" for="restoreFile">↑ Restore</label><input id="restoreFile" type="file" accept=".json" hidden></div></div>
+ </div>
+ <div class="panel playlist-panel" id="musicPanel"><div class="panel-head"><div><h3>♫ My Little Playlist</h3><div class="muted">a soft little soundtrack for your working hours ☁️</div></div><span class="src-tag">♡ <span id="plCount">0</span> songs</span></div>
+  <div class="pl-grid">
+   <div class="pl-card">
+    <div class="np"><div class="np-art" id="npArt">♫</div><div class="np-info"><span class="src-tag" id="npSrc">✧ ready</span><strong id="npTitle">Pick a little song ♡</strong><small id="npArtist">Your playlist is waiting — music only starts when you press Play</small></div><a class="ib" id="npOpen" target="_blank" rel="noopener" hidden title="Open original">↗</a></div>
+    <div class="embed-box" id="embedBox"></div>
+    <div class="progress"><span id="tCur">0:00</span><input type="range" class="m-range" id="mSeek" min="0" max="1000" value="0" disabled aria-label="Progress"><span id="tDur">0:00</span></div>
+    <div class="m-ctrls"><button class="ib" id="mShuffle" aria-pressed="false" title="Shuffle">⤮</button><button class="ib" id="mPrev" title="Previous">⏮&#xFE0E;</button><button class="ib big" id="mPlay" title="Play / Pause">▶</button><button class="ib" id="mNext" title="Next">⏭&#xFE0E;</button><button class="ib" id="mRepeat" aria-pressed="false" title="Repeat">↻</button></div>
+    <div class="m-vol"><button class="ib" id="mMute" title="Mute / Unmute">🔈&#xFE0E;</button><input type="range" class="m-range" id="mVol" min="0" max="100" value="70" aria-label="Volume"><span id="mVolNote"></span><button class="chip" id="mCompact" aria-pressed="true" title="Compact video">▭ compact player</button></div>
+    <div class="m-status" id="mStatus" role="status"></div>
+   </div>
+   <div class="pl-card pl-add"><h4>✧ Add a song</h4>
+    <div class="m-tabs" role="tablist"><button class="active" data-src="spotify">Spotify</button><button data-src="youtube">YouTube</button><button data-src="url">Music URL</button></div>
+    <form id="addTrackForm">
+     <div class="field"><label id="addLinkLabel">Spotify link</label><input id="addLink" required autocomplete="off"></div>
+     <div class="field"><label>Nama lagu</label><input id="addTitle" placeholder="optional · auto-filled when possible"></div>
+     <div class="field"><label>Nama penyanyi</label><input id="addArtist" placeholder="optional"></div>
+     <div class="pl-help" id="addHelp"></div>
+     <button class="btn pink" type="submit">＋ Add to Playlist</button>
+    </form>
+    <div class="sp-account" id="spAccount"><small>Checking Spotify connection…</small></div>
+   </div>
+  </div>
+  <div class="pl-library"><div class="panel-head"><div><h3 style="font-size:18px">Mini music library ✧</h3><div class="muted">saved on this device ♡</div></div><div class="chips"><button class="chip active" data-fav="0">All</button><button class="chip" data-fav="1">♡ Favorites</button></div></div>
+  <ul class="pl-list" id="plList"></ul></div>
+ </div>
+ <div class="panel"><div class="panel-head"><div><h3>Google Sheets connection</h3><div class="muted">A live preview of your spreadsheet</div></div><span class="pill">Spreadsheet</span></div>
+ <div class="field"><label>Spreadsheet URL</label><input id="sheetUrl" value="https://docs.google.com/spreadsheets/d/1F95-UMgaSWF8zIapli2j40NehaGPvCszQvnxsuxSmcM/edit?usp=sharing"></div>
+ <div class="field" style="margin-top:10px"><label>Apps Script Web App URL (paste after setup)</label><input id="scriptUrl" placeholder="https://script.google.com/macros/s/.../exec"></div>
+ <div class="actions" style="margin-top:12px"><button class="btn" id="saveSheet">Save connection</button><button class="btn soft" id="syncAll">Sync all orders → Sheet</button><button class="btn soft" id="importSheet">← Import from Sheet</button><button class="btn ghost" id="openSheet">Open spreadsheet ↗</button></div>
+ <div class="notice">The app saves orders in this browser first. After you deploy the included Apps Script, new orders can be sent to your sheet and existing sheet rows can be imported using the sync tools. Share the sheet with the Google account that deploys the script.</div>
+ <iframe class="sheet-frame" id="sheetFrame" title="Spreadsheet preview" loading="lazy"></iframe>
+ </div>
+ <div class="panel"><div class="panel-head"><h3>About your journal</h3></div><div class="muted">Primpaii's Way · a soft little space for your online shop.<br>Palette: Warm White #FBF7F2 · Rose Beige #E5D1C5 · Burgundy #4D0E13 · Creme #EEE4DA · Cocoa Brown #594448 · Muted Mauve #AA8584 · Milky Pink Cream #FEEFF3.</div></div>
+</section>
+
+<section class="page" id="editor">
+ <div class="form-card"><div class="panel-head"><div><h3 id="formTitle">Add a lovely order</h3><div class="muted">Fill in the details below, the recap will do the maths ♡</div></div><button class="btn ghost small" id="cancelEdit">Close</button></div>
+ <form id="orderForm"><input type="hidden" id="orderId">
+ <div class="form-grid">
+  <div class="field"><label>Nama customer *</label><input id="customer" required placeholder="Customer name"></div>
+  <div class="field"><label>Aplikasi *</label><input id="appName" required placeholder="e.g. Canva, Netflix"></div>
+  <div class="field"><label>Plan</label><input id="plan" placeholder="e.g. Premium / Private"></div>
+  <div class="field"><label>Tanggal order *</label><input id="orderDate" type="date" required></div>
+  <div class="field"><label>Durasi</label><input id="duration" type="number" min="1" value="30"></div>
+  <div class="field"><label>Satuan durasi</label><select id="durationUnit"><option value="days">Hari</option><option value="weeks">Minggu</option><option value="months">Bulan</option><option value="years">Tahun</option></select></div>
+  <div class="field"><label>Akun (untuk reminder)</label><input id="account" placeholder="Email / username"></div>
+  <div class="field"><label>Nama FH</label><input id="fh" placeholder="Nama FH"></div>
+  <div class="field"><label>Pemasukan (Rp)</label><input id="income" type="number" min="0" value="0"></div>
+  <div class="field"><label>Pengeluaran (Rp)</label><input id="expense" type="number" min="0" value="0"></div>
+  <div class="field"><label>Diskon (Rp)</label><input id="discount" type="number" min="0" value="0"></div>
+  <div class="field"><label>Status order</label><select id="status"><option value="active">Aktif</option><option value="completed">Selesai</option><option value="cancelled">Dibatalkan</option></select></div>
+  <div class="field full"><label>Catatan</label><input id="notes" placeholder="Optional little note..."></div>
+ </div><div class="muted" style="margin-top:12px">Profit & total pendapatan bersih = pemasukan − pengeluaran − diskon.</div>
+ <div class="form-actions"><button type="button" class="btn ghost" id="resetForm">Reset</button><button class="btn" type="submit">Save order ♡</button></div>
+ </form></div>
+</section>
+<div class="footer">made with a little love & lots of dreams · ꕤ</div>
+</main></div>
+<div class="mini-player" id="miniPlayer" hidden><button class="ib" id="miniOpen" title="Open My Little Playlist">♫</button><div class="mini-meta"><strong id="miniTitle"></strong><small id="miniSrc"></small></div><button class="ib" id="miniPrev" title="Previous">⏮&#xFE0E;</button><button class="ib on" id="miniPlay" title="Play / Pause">▶</button><button class="ib" id="miniNext" title="Next">⏭&#xFE0E;</button></div>
+<div class="toast" id="toast"></div>
+<script>
+const $=id=>document.getElementById(id), money=n=>new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(Number(n)||0);
+const KEY='primpaii_orders_v1', SETTINGS='primpaii_settings_v1';
+let orders=JSON.parse(localStorage.getItem(KEY)||'[]'), editing=false;
+let settings=JSON.parse(localStorage.getItem(SETTINGS)||'{}');
+const save=()=>{localStorage.setItem(KEY,JSON.stringify(orders));$('sideCount').textContent=orders.length+' lovely orders saved';renderAll()};
+const toast=msg=>{let t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)};
+const fmtDate=s=>s?new Date(s+'T00:00:00').toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'}):'—';
+const addDuration=(date,n,unit)=>{let d=new Date(date+'T00:00:00');if(unit==='days')d.setDate(d.getDate()+n);if(unit==='weeks')d.setDate(d.getDate()+n*7);if(unit==='months')d.setMonth(d.getMonth()+n);if(unit==='years')d.setFullYear(d.getFullYear()+n);return d};
+const endDate=o=>addDuration(o.date,Number(o.duration)||0,o.unit||'days');
+const daysLeft=o=>Math.ceil((endDate(o)-new Date(new Date().toDateString()))/86400000);
+const profit=o=>(+o.income||0)-(+o.expense||0)-(+o.discount||0);
+const durationLabel=o=>`${o.duration||0} ${({days:'hari',weeks:'minggu',months:'bulan',years:'tahun'})[o.unit]||'hari'}`;
+const statusFor=o=>{if(o.status==='completed')return ['Selesai','green'];if(o.status==='cancelled')return ['Dibatalkan','red'];let d=daysLeft(o);return d<0?['Expired','red']:d<=3?['Segera renewal','gold']:['Aktif','green']};
+function go(page){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===page));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));$('pageTitle').textContent=({dashboard:'Dashboard',recap:'Rekapan',reminder:'Reminder',history:'Riwayat Order',settings:'Setting',editor:editing?'Edit order':'Add order'})[page];if(page==='editor')$('pageTitle').textContent='Order details';document.body.dataset.page=page;if(typeof updateMini==='function')updateMini();if(page==='settings'&&typeof spotifyStatus==='function')spotifyStatus();}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+function table(rows,headers,render){if(!rows.length)return '<div class="empty">Nothing here yet ♡</div>';return `<table><thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map(render).join('')}</tbody></table>`}
+function actions(o){return `<button class="btn ghost small" onclick="editOrder('${o.id}')">Edit</button> <button class="btn danger small" onclick="deleteOrder('${o.id}')">Delete</button>`}
+function renderDashboard(){
+ let total=orders.length,active=orders.filter(o=>o.status==='active'&&daysLeft(o)>=0).length,expiredToday=orders.filter(o=>o.status==='active'&&daysLeft(o)===0).length,urgent=orders.filter(o=>o.status==='active'&&daysLeft(o)>0&&daysLeft(o)<=3).length,done=orders.filter(o=>o.status==='completed').length,net=orders.reduce((s,o)=>s+profit(o),0);
+ const cards=[['Total order',total,'all orders collected'],['Order aktif',active,'currently running'],['Renewal hari ini',expiredToday,'ends today'],['Segera renewal',urgent,'within 3 days'],['Order selesai',done,'completed orders'],['Pendapatan bersih',money(net),'after expense & discount']];
+ $('stats').innerHTML=cards.map(c=>`<div class="stat"><div class="label">${c[0]}</div><div class="value">${c[1]}</div><div class="hint">${c[2]}</div></div>`).join('');
+ $('recentTable').innerHTML=table([...orders].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5),['Customer','Aplikasi','Tanggal','Durasi','Profit','Status','Action'],o=>`<tr><td>${esc(o.customer)}</td><td>${esc(o.app)}</td><td>${fmtDate(o.date)}</td><td>${durationLabel(o)}</td><td>${money(profit(o))}</td><td><span class="pill ${statusFor(o)[1]}">${statusFor(o)[0]}</span></td><td>${actions(o)}</td></tr>`);
+ $('dashboardNote').textContent=urgent?`You have ${urgent} order(s) that need renewal soon. Don't forget to send a sweet reminder ♡`:expiredToday?`You have ${expiredToday} renewal(s) due today. Time for a little follow-up ꕤ`:'Your little shop is looking lovely. Keep adding orders to watch your progress grow ♡';
+}
+function recapRows(){let q=$('recapSearch').value.toLowerCase(),from=$('filterFrom').value,to=$('filterTo').value;return orders.filter(o=>(!q||[o.customer,o.app,o.plan,o.fh].join(' ').toLowerCase().includes(q))&&(!from||o.date>=from)&&(!to||o.date<=to)).sort((a,b)=>b.date.localeCompare(a.date))}
+function renderRecap(){let rows=recapRows();$('recapTable').innerHTML=table(rows,['Tanggal order','Aplikasi','Plan','User / Akun','Durasi','Nama customer','Nama FH','Pemasukan','Pengeluaran','Diskon','Profit','Total bersih','Action'],o=>`<tr><td>${fmtDate(o.date)}</td><td>${esc(o.app)}</td><td>${esc(o.plan||'—')}</td><td>${esc(o.account||'—')}</td><td>${durationLabel(o)}</td><td>${esc(o.customer)}</td><td>${esc(o.fh||'—')}</td><td>${money(o.income)}</td><td>${money(o.expense)}</td><td>${money(o.discount)}</td><td><b>${money(profit(o))}</b></td><td>${money(profit(o))}</td><td>${actions(o)}</td></tr>`);
+ let income=rows.reduce((s,o)=>s+(+o.income||0),0),expense=rows.reduce((s,o)=>s+(+o.expense||0),0),discount=rows.reduce((s,o)=>s+(+o.discount||0),0),net=income-expense-discount;
+ $('financeStats').innerHTML=[['Pemasukan',money(income)],['Pengeluaran',money(expense)],['Total diskon',money(discount)],['Pendapatan bersih',money(net)]].map(c=>`<div class="stat"><div class="label">${c[0]}</div><div class="value" style="font-size:20px">${c[1]}</div></div>`).join('');
+}
+function renderReminder(){let q=$('reminderSearch').value.toLowerCase(),f=$('reminderFilter').value;let rows=orders.filter(o=>o.status==='active'&&(!q||[o.customer,o.app,o.account,o.fh].join(' ').toLowerCase().includes(q))).filter(o=>{let d=daysLeft(o);return f==='all'||(f==='urgent'&&d>=0&&d<=3)||(f==='active'&&d>3)||(f==='expired'&&d<0)}).sort((a,b)=>daysLeft(a)-daysLeft(b));$('reminderTable').innerHTML=table(rows,['Nama customer','Aplikasi','Akun','Tanggal order','Durasi','Durasi tersisa','Nama FH','Durasi habis','Status'],o=>{let d=daysLeft(o),st=statusFor(o);return `<tr><td>${esc(o.customer)}</td><td>${esc(o.app)}</td><td>${esc(o.account||'—')}</td><td>${fmtDate(o.date)}</td><td>${durationLabel(o)}</td><td>${d<0?'Lewat '+Math.abs(d)+' hari':d===0?'Hari ini':d+' hari lagi'}</td><td>${esc(o.fh||'—')}</td><td>${fmtDate(endDate(o).toISOString().slice(0,10))}</td><td><span class="pill ${st[1]}">${st[0]}</span></td></tr>`})}
+function renderHistory(){let q=$('historySearch').value.toLowerCase(),rows=orders.filter(o=>!q||[o.customer,o.app,o.fh,o.plan].join(' ').toLowerCase().includes(q)).sort((a,b)=>b.date.localeCompare(a.date));$('historyTable').innerHTML=table(rows,['Customer','Aplikasi','Durasi','Plan','Nama FH'],o=>`<tr><td>${esc(o.customer)}</td><td>${esc(o.app)}</td><td>${durationLabel(o)}</td><td>${esc(o.plan||'—')}</td><td>${esc(o.fh||'—')}</td></tr>`);
+ let counts={};orders.forEach(o=>counts[o.app]=(counts[o.app]||0)+1);let sorted=Object.entries(counts).sort((a,b)=>b[1]-a[1]),max=sorted[0]?.[1]||1;$('appRanking').innerHTML=sorted.length?sorted.slice(0,8).map(([n,c])=>`<div class="rank-row"><span style="min-width:85px">${esc(n)}</span><div class="rank-bar"><i style="width:${c/max*100}%"></i></div><b>${c}</b></div>`).join(''):'<div class="empty">Your bestsellers will bloom here ♡</div>'}
+function renderAll(){renderDashboard();renderRecap();renderReminder();renderHistory();$('sideCount').textContent=orders.length+' lovely orders saved'}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function resetForm(){ $('orderForm').reset();$('orderId').value='';$('orderDate').value=new Date().toISOString().slice(0,10);$('duration').value=30;$('income').value=0;$('expense').value=0;$('discount').value=0;$('formTitle').textContent='Add a lovely order';editing=false}
+function openEditor(o){resetForm();if(o){editing=true;$('formTitle').textContent='Edit your order';$('orderId').value=o.id;$('customer').value=o.customer;$('appName').value=o.app;$('plan').value=o.plan||'';$('orderDate').value=o.date;$('duration').value=o.duration;$('durationUnit').value=o.unit||'days';$('account').value=o.account||'';$('fh').value=o.fh||'';$('income').value=o.income||0;$('expense').value=o.expense||0;$('discount').value=o.discount||0;$('status').value=o.status||'active';$('notes').value=o.notes||''}go('editor')}
+window.editOrder=id=>{let o=orders.find(x=>x.id===id);if(o)openEditor(o)};
+window.deleteOrder=id=>{if(confirm('Delete this order from your journal?')){orders=orders.filter(o=>o.id!==id);save();toast('Order deleted ♡')}};
+$('newOrderBtn').onclick=()=>openEditor();$('recapAdd').onclick=()=>openEditor();$('cancelEdit').onclick=()=>go('dashboard');$('resetForm').onclick=resetForm;
+$('orderForm').onsubmit=async e=>{e.preventDefault();let id=$('orderId').value||crypto.randomUUID(),old=orders.find(o=>o.id===id);let o={id,customer:$('customer').value.trim(),app:$('appName').value.trim(),plan:$('plan').value.trim(),date:$('orderDate').value,duration:+$('duration').value,unit:$('durationUnit').value,account:$('account').value.trim(),fh:$('fh').value.trim(),income:+$('income').value,expense:+$('expense').value,discount:+$('discount').value,status:$('status').value,notes:$('notes').value.trim(),updatedAt:new Date().toISOString()};if(old)orders=orders.map(x=>x.id===id?o:x);else orders.push(o);save();await sendToSheet(o,!!old);go('dashboard');toast(old?'Order updated ♡':'Order saved to your journal ♡')};
+['recapSearch','filterFrom','filterTo'].forEach(id=>$(id).addEventListener('input',renderRecap));$('clearFilter').onclick=()=>{$('recapSearch').value='';$('filterFrom').value='';$('filterTo').value='';renderRecap()};$('reminderSearch').oninput=renderReminder;$('reminderFilter').onchange=renderReminder;$('historySearch').oninput=renderHistory;
+$('exportCsv').onclick=()=>{let rows=recapRows(),cols=['Tanggal order','Aplikasi','Plan','User','Durasi','Nama customer','Nama FH','Pemasukan','Pengeluaran','Diskon','Profit','Total bersih'];let lines=[cols,...rows.map(o=>[o.date,o.app,o.plan,o.account,durationLabel(o),o.customer,o.fh,o.income,o.expense,o.discount,profit(o),profit(o)])].map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\n');download('primpaii-rekapan.csv','\ufeff'+lines,'text/csv');};
+function download(name,content,type){let a=document.createElement('a'),url=URL.createObjectURL(new Blob([content],{type}));a.href=url;a.download=name;a.click();URL.revokeObjectURL(url)}
+$('backupBtn').onclick=()=>download('primpaii-backup.json',JSON.stringify({orders,settings,playlist},null,2),'application/json');
+$('restoreFile').onchange=async e=>{try{let data=JSON.parse(await e.target.files[0].text());if(!Array.isArray(data.orders))throw 0;orders=data.orders;if(Array.isArray(data.playlist)){playlist=data.playlist;savePlaylist();renderPlaylist()}save();toast('Backup restored ♡')}catch{toast('File backup tidak valid')}e.target.value=''};
+function applySettings(){if(settings.font){document.documentElement.style.setProperty('--font',settings.font);$('fontSelect').value=settings.font}if(settings.theme==='dark')darkMode(true);applyToolbar(settings.toolbar||'classic');$('themeSelect').value=settings.theme||'light';if(settings.sheetUrl)$('sheetUrl').value=settings.sheetUrl;if(settings.scriptUrl)$('scriptUrl').value=settings.scriptUrl;$('sheetFrame').src=($('sheetUrl').value||'').replace(/\/edit.*$/,'/preview')}
+function darkMode(on){document.body.classList.toggle('dark',on)}
+$('themeSelect').onchange=e=>{settings.theme=e.target.value;darkMode(settings.theme==='dark');saveSettings()};$('fontSelect').onchange=e=>{settings.font=e.target.value;document.documentElement.style.setProperty('--font',settings.font);saveSettings()};
+const TOOLBAR={classic:['⌂','✧','♡','❀','⚙'],bloom:['ꕤ','✿','❀','✾','❁'],hearts:['♡','❥','ღ','♥','♡'],stars:['⋆','✦','✧','⭑','✩'],cloud:['☁︎','☾','୨୧','⋆','✧']};
+function applyToolbar(k){const set=TOOLBAR[k]||TOOLBAR.classic;document.querySelectorAll('.nav button span').forEach((el,i)=>el.textContent=set[i]||'✧');$('toolbarSelect').value=TOOLBAR[k]?k:'classic'}
+$('toolbarSelect').onchange=e=>{settings.toolbar=e.target.value;applyToolbar(settings.toolbar);saveSettings()};
+function saveSettings(){localStorage.setItem(SETTINGS,JSON.stringify(settings))}
+$('saveSheet').onclick=()=>{settings.sheetUrl=$('sheetUrl').value.trim();settings.scriptUrl=$('scriptUrl').value.trim();saveSettings();$('sheetFrame').src=settings.sheetUrl.replace(/\/edit.*$/,'/preview');toast('Spreadsheet settings saved ♡')};
+$('openSheet').onclick=()=>window.open($('sheetUrl').value,'_blank');$('syncAll').onclick=async()=>{if(!getScriptUrl()){toast('Tambahkan Apps Script URL terlebih dahulu');return}let ok=0;for(let o of orders){await sendToSheet(o,false);ok++}toast(`${ok} order dikirim untuk sinkronisasi ♡`)};
+$('importSheet').onclick=()=>{const url=getScriptUrl();if(!url){toast('Tambahkan Apps Script URL terlebih dahulu');return}const cb='__primpaiiImport_'+Date.now();window[cb]=data=>{try{if(!data.ok||!Array.isArray(data.orders))throw 0;let map=new Map(orders.map(o=>[o.id,o]));data.orders.forEach(o=>{if(o.id)map.set(o.id,o)});orders=Array.from(map.values());save();toast(`${data.orders.length} order berhasil diimpor ♡`)}catch(e){toast('Data sheet tidak dapat dibaca')}delete window[cb];script.remove()};const script=document.createElement('script');script.src=url+(url.includes('?')?'&':'?')+'callback='+cb;script.onerror=()=>{toast('Gagal membaca sheet. Periksa deployment Apps Script.');delete window[cb];script.remove()};document.body.appendChild(script)};
+function getScriptUrl(){return $('scriptUrl').value.trim()}
+async function sendToSheet(o,update){let url=getScriptUrl();if(!url)return;try{await fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:update?'update':'add',order:o,secret:''})})}catch(err){console.warn('Sheet sync issue',err)}}
+$('today').textContent=new Date().toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+// ── Floating decorations: a handful of soft symbols, CSS-animated (no JS per frame) ──
+(()=>{const sym=['ꕤ','☁️','𑄝੭','𓆩♡𓆪','𝜗𝜚'],n=innerWidth<600?7:12,host=$('decor');for(let i=0;i<n;i++){const el=document.createElement('span');el.className='float-deco';el.textContent=sym[i%sym.length];const lane=100/n;el.style.cssText=`left:${(i*lane+Math.random()*lane*.7).toFixed(1)}%;top:${(8+Math.random()*80).toFixed(1)}%;font-size:${(14+Math.random()*8).toFixed(0)}px;--dur:${(16+Math.random()*10).toFixed(1)}s;--delay:${(-Math.random()*24).toFixed(1)}s;--rot:${(Math.random()*16-8).toFixed(1)}deg;--o:${(.3+Math.random()*.18).toFixed(2)}`;host.appendChild(el)}})();
+
+// ── My Little Playlist: Spotify embed, YouTube IFrame API, HTML Audio for direct URLs ──
+const PL_KEY='primpaii_playlist_v1',MP_KEY='primpaii_music_v1',SRC={spotify:'Spotify',youtube:'YouTube',url:'Custom URL'};
+const loadJSON=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}};
+let playlist=loadJSON(PL_KEY,[]);if(!Array.isArray(playlist))playlist=[];
+let mp=Object.assign({volume:70,muted:false,repeat:'off',shuffle:false,compact:true,currentId:null,favOnly:false,addSource:'spotify'},loadJSON(MP_KEY,{}));
+const M={kind:null,audio:null,yt:null,sp:null,playing:false,pos:0,dur:0,timer:null,token:0,ended:false,seeking:false,editId:null,errored:false};
+function savePlaylist(){localStorage.setItem(PL_KEY,JSON.stringify(playlist))}
+const saveMP=()=>localStorage.setItem(MP_KEY,JSON.stringify(mp));
+const uid=()=>(crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2));
+const fmtTime=t=>{t=Math.max(0,Math.floor(t||0));return Math.floor(t/60)+':'+String(t%60).padStart(2,'0')};
+const current=()=>playlist.find(t=>t.id===mp.currentId);
+const setStatus=(msg,tone='info')=>{const el=$('mStatus');el.textContent=msg||'';el.className='m-status'+(tone==='err'?' err':'')};
+const SP_TYPES={track:'Track',album:'Album',playlist:'Playlist',episode:'Podcast episode',show:'Podcast',artist:'Artist'};
+
+function parseSpotify(raw){const s=raw.trim();let m=s.match(/^spotify:(track|album|playlist|episode|show|artist):([A-Za-z0-9]{10,32})$/);if(m)return{type:m[1],id:m[2]};
+ let u;try{u=new URL(s)}catch{return null}if(!/(^|\.)spotify\.com$/.test(u.hostname))return null;
+ m=u.pathname.match(/^\/(?:intl-[a-z-]+\/)?(?:embed\/)?(track|album|playlist|episode|show|artist)\/([A-Za-z0-9]{10,32})/);return m?{type:m[1],id:m[2]}:null}
+const isSpotifyShort=raw=>{try{return /^(spotify\.link|spoti\.fi)$/.test(new URL(raw.trim()).hostname)}catch{return false}};
+function parseYouTube(raw){let u;try{u=new URL(raw.trim())}catch{return null}const h=u.hostname.replace(/^(www|m)\./,'');let id=null,list=u.searchParams.get('list');
+ if(h==='youtu.be')id=u.pathname.slice(1).split('/')[0];
+ else if(['youtube.com','music.youtube.com','youtube-nocookie.com'].includes(h)){if(u.pathname==='/watch')id=u.searchParams.get('v');else{const m=u.pathname.match(/^\/(?:embed|shorts|live|v)\/([\w-]{11})/);if(m)id=m[1]}}
+ else return null;
+ if(id&&!/^[\w-]{11}$/.test(id))id=null;if(list&&!/^[\w-]{10,}$/.test(list))list=null;return(id||list)?{id,list}:null}
+
+const ADD_INFO={
+ spotify:['Spotify link','https://open.spotify.com/track/…','Paste a Spotify link to a song, album, playlist or podcast. It plays through the official Spotify player — log in to Spotify in this browser for full tracks (otherwise Spotify plays a 30s preview).'],
+ youtube:['YouTube / YouTube Music link','https://www.youtube.com/watch?v=…','Video, YouTube Music or playlist links work. Some videos are blocked from embedding by their owner — you will see a note and can open them on YouTube.'],
+ url:['Direct audio URL','https://example.com/song.mp3','A direct link to an audio file (MP3, WAV, OGG, M4A). Page links such as Google Drive or SoundCloud pages are not audio files and will not play.']};
+function setAddSource(src){mp.addSource=ADD_INFO[src]?src:'spotify';saveMP();const[i,ph,help]=ADD_INFO[mp.addSource];$('addLinkLabel').textContent=i;$('addLink').placeholder=ph;$('addHelp').textContent=help;document.querySelectorAll('.m-tabs button').forEach(b=>b.classList.toggle('active',b.dataset.src===mp.addSource));$('spAccount').hidden=mp.addSource!=='spotify'}
+document.querySelectorAll('.m-tabs button').forEach(b=>b.onclick=()=>setAddSource(b.dataset.src));
+
+function buildTrack(source,link,title,artist){link=link.trim();
+ if(isSpotifyShort(link))return{err:'Short Spotify links (spotify.link) cannot be read. Open the link, then copy the full open.spotify.com link ♡'};
+ // A Spotify or YouTube page is never treated as a direct audio file: route it to its official player.
+ if(source!=='spotify'&&parseSpotify(link))source='spotify';else if(source!=='youtube'&&parseYouTube(link))source='youtube';
+ const t={id:uid(),source,url:link,title:title.trim(),artist:artist.trim(),fav:false,addedAt:Date.now()};
+ if(source==='spotify'){const p=parseSpotify(link);if(!p)return{err:'That Spotify link is not valid. Example: https://open.spotify.com/track/…'};Object.assign(t,{kind:p.type,ref:p.id,url:`https://open.spotify.com/${p.type}/${p.id}`})}
+ else if(source==='youtube'){if(!parseYouTube(link))return{err:'That YouTube link is not valid. Example: https://www.youtube.com/watch?v=…'}}
+ else{let u;try{u=new URL(link)}catch{return{err:'That link is not valid. Make sure it starts with https://'}}if(!/^https?:$/.test(u.protocol))return{err:'Only http(s) audio links are supported.'};t.url=u.href;
+  const ext=(u.pathname.match(/\.([a-z0-9]{2,5})$/i)||[])[1];t.note=ext&&/^(mp3|wav|ogg|oga|m4a|aac|opus|flac|webm)$/i.test(ext)?'':'unknown'}
+ if(!t.title){t.autoTitle=true;t.title=source==='spotify'?'Spotify '+SP_TYPES[t.kind].toLowerCase():source==='youtube'?'YouTube music':decodeURIComponent(t.url.split('/').pop().split('?')[0]).replace(/\.[a-z0-9]+$/i,'')||'Untitled song'}
+ return{track:t}}
+async function fetchSpotifyTitle(t){try{const r=await fetch('https://open.spotify.com/oembed?url='+encodeURIComponent(t.url));if(!r.ok)return;const d=await r.json();const x=playlist.find(p=>p.id===t.id);if(x&&x.autoTitle&&d.title){x.title=d.title;x.autoTitle=false;savePlaylist();renderPlaylist();updateUI()}}catch{}}
+$('addTrackForm').onsubmit=e=>{e.preventDefault();const r=buildTrack(mp.addSource,$('addLink').value,$('addTitle').value,$('addArtist').value);if(r.err){setStatus(r.err,'err');toast('Link tidak valid ♡');return}
+ playlist.push(r.track);savePlaylist();renderPlaylist();e.target.reset();toast(`Added to your playlist · ${SRC[r.track.source]} ♡`);
+ setStatus(r.track.note==='unknown'?'This link has no audio file extension — it will be tried when you press Play.':r.track.source!==mp.addSource?`Detected a ${SRC[r.track.source]} link, so it was added as ${SRC[r.track.source]} ✧`:'');
+ if(r.track.source==='spotify'&&r.track.autoTitle)fetchSpotifyTitle(r.track);if(!mp.currentId){mp.currentId=r.track.id;saveMP();updateUI()}};
+
+function stopAll(){M.token++;clearInterval(M.timer);
+ if(M.audio){const a=M.audio;M.audio=null;a.pause();a.removeAttribute('src');a.load()}
+ if(M.yt){try{M.yt.destroy()}catch{}M.yt=null}
+ if(M.sp){try{M.sp.destroy()}catch{}M.sp=null}
+ $('embedBox').innerHTML='';$('embedBox').className='embed-box';Object.assign(M,{kind:null,playing:false,pos:0,dur:0,ended:false,errored:false})}
+async function playTrack(id){const t=playlist.find(x=>x.id===id);if(!t)return;stopAll();mp.currentId=id;saveMP();const tk=M.token;M.kind=t.source;setStatus('Loading your song… ☁️');updateUI();
+ try{if(t.source==='url')playAudio(t,tk);else if(t.source==='youtube')await playYouTube(t,tk);else await playSpotify(t,tk)}
+ catch(e){console.warn('Music source failed',e);if(tk===M.token){M.playing=false;setStatus(`${SRC[t.source]} player could not load. Check your connection or open the song directly ↗`,'err');updateUI()}}}
+
+function playAudio(t,tk){const a=new Audio();M.audio=a;a.preload='metadata';a.volume=mp.volume/100;a.muted=mp.muted;
+ const on=(ev,fn)=>a.addEventListener(ev,()=>{if(tk===M.token)fn()});
+ on('playing',()=>{M.playing=true;setStatus('');updateUI()});on('pause',()=>{M.playing=false;updateUI()});
+ on('timeupdate',()=>{M.pos=a.currentTime;M.dur=isFinite(a.duration)?a.duration:0;updateProgress()});on('loadedmetadata',()=>{M.dur=isFinite(a.duration)?a.duration:0;updateProgress()});
+ on('ended',onEnded);
+ on('error',()=>{M.playing=false;M.errored=true;const c=a.error&&a.error.code;setStatus(c===4?'This audio URL cannot be played — the format is not supported or the link is not a direct audio file (MP3, WAV, OGG).':c===2?'Song not available — the audio server could not be reached.':'This audio URL cannot be played.','err');updateUI()});
+ a.src=t.url;a.play().catch(e=>{if(tk===M.token&&e.name==='NotAllowedError')setStatus('Your browser paused autoplay. Press Play once more ♡')})}
+
+let ytReady=null;
+function loadYT(){if(window.YT&&YT.Player)return Promise.resolve(YT);return ytReady||(ytReady=new Promise((res,rej)=>{const prev=window.onYouTubeIframeAPIReady;window.onYouTubeIframeAPIReady=()=>{prev&&prev();res(YT)};const s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';s.onerror=()=>rej(new Error('yt-load'));document.head.appendChild(s);setTimeout(()=>rej(new Error('yt-timeout')),12000)}).catch(e=>{ytReady=null;throw e}))}
+async function playYouTube(t,tk){const api=await loadYT();if(tk!==M.token)return;const p=parseYouTube(t.url)||{},box=$('embedBox');
+ box.className='embed-box yt'+(mp.compact?' compact':'');box.innerHTML='<div id="ytHost"></div>';
+ const vars={autoplay:1,playsinline:1,rel:0};if(/^https?:$/.test(location.protocol))vars.origin=location.origin;if(p.list){vars.listType='playlist';vars.list=p.list}
+ M.yt=new api.Player('ytHost',{width:'100%',height:'100%',videoId:p.id||undefined,playerVars:vars,events:{
+  onReady:e=>{if(tk!==M.token)return;const pl=e.target;pl.setVolume(mp.volume);mp.muted?pl.mute():pl.unMute();pl.playVideo();setStatus('');
+   M.timer=setInterval(()=>{if(tk!==M.token||!M.yt||!M.yt.getCurrentTime)return;M.pos=M.yt.getCurrentTime()||0;M.dur=M.yt.getDuration()||0;updateProgress()},500);
+   setTimeout(()=>{if(tk===M.token&&!M.playing&&!M.errored)setStatus('If the video has not started, tap it once ♡')},3000)},
+  onStateChange:e=>{if(tk!==M.token)return;const S=api.PlayerState;if(e.data===S.PLAYING){M.playing=true;M.errored=false;setStatus('');fillYTTitle(t)}else if([S.PAUSED,S.CUED,S.ENDED].includes(e.data))M.playing=false;
+   if(e.data===S.ENDED){const l=M.yt.getPlaylist&&M.yt.getPlaylist();if(!(l&&l.length&&M.yt.getPlaylistIndex()<l.length-1))onEnded()}updateUI()},
+  onError:e=>{if(tk!==M.token)return;M.playing=false;M.errored=true;setStatus(({2:'That YouTube link is not valid.',5:'This video cannot be played in the web player.',100:'Video not available — it may be removed or private.',101:'The owner does not allow this video to be embedded. Open it on YouTube ↗',150:'The owner does not allow this video to be embedded. Open it on YouTube ↗'})[e.data]||'This video cannot be played.','err');updateUI()}}})}
+function fillYTTitle(t){const x=playlist.find(p=>p.id===t.id);if(!x||!x.autoTitle||!M.yt||!M.yt.getVideoData)return;const d=M.yt.getVideoData();if(d&&d.title){x.title=d.title;x.artist=x.artist||d.author||'';x.autoTitle=false;savePlaylist();renderPlaylist()}}
+
+let spReady=null;
+function loadSpotify(){if(window.__spApi)return Promise.resolve(window.__spApi);return spReady||(spReady=new Promise((res,rej)=>{const prev=window.onSpotifyIframeApiReady;window.onSpotifyIframeApiReady=api=>{window.__spApi=api;prev&&prev(api);res(api)};const s=document.createElement('script');s.src='https://open.spotify.com/embed/iframe-api/v1';s.async=true;s.onerror=()=>rej(new Error('sp-load'));document.head.appendChild(s);setTimeout(()=>rej(new Error('sp-timeout')),12000)}).catch(e=>{spReady=null;throw e}))}
+async function playSpotify(t,tk){const box=$('embedBox'),one=['track','episode'].includes(t.kind),h=(mp.compact||one)?152:352;box.className='embed-box sp';box.innerHTML='<div id="spHost"></div>';
+ let api;try{api=await loadSpotify()}catch{if(tk!==M.token)return;box.innerHTML=`<iframe src="https://open.spotify.com/embed/${t.kind}/${t.ref}" height="${h}" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Spotify player"></iframe>`;setStatus('Spotify controls could not load — use the play button inside the Spotify player.');return}
+ if(tk!==M.token)return;
+ api.createController($('spHost'),{uri:`spotify:${t.kind}:${t.ref}`,width:'100%',height:h},c=>{if(tk!==M.token){try{c.destroy()}catch{}return}M.sp=c;
+  c.addListener('ready',()=>{if(tk!==M.token)return;setStatus('');c.play();setTimeout(()=>{if(tk===M.token&&!M.playing)setStatus('If it has not started, press ▶ inside the Spotify player ♡')},3500)});
+  c.addListener('playback_update',e=>{if(tk!==M.token)return;const d=e.data||{};M.playing=!d.isPaused&&!d.isBuffering;M.pos=(d.position||0)/1000;M.dur=(d.duration||0)/1000;if(M.playing)setStatus('');
+   if(one&&M.dur>0&&M.pos>=M.dur-1){if(!M.ended){M.ended=true;onEnded()}}else M.ended=false;updateUI()})})}
+
+function restart(){if(M.kind==='url'&&M.audio){M.audio.currentTime=0;M.audio.play().catch(()=>{})}else if(M.kind==='youtube'&&M.yt){M.yt.seekTo(0,true);M.yt.playVideo()}else if(M.kind==='spotify'&&M.sp){M.sp.seek(0);M.sp.play()}}
+function onEnded(){if(mp.repeat==='one')restart();else nextTrack(true)}
+const queue=()=>{const f=playlist.filter(t=>t.fav);return mp.favOnly&&f.length?f:playlist};
+function nextTrack(auto){const q=queue();if(!q.length)return;const i=q.findIndex(t=>t.id===mp.currentId);let n;
+ if(mp.shuffle&&q.length>1){do n=Math.floor(Math.random()*q.length);while(n===i)}
+ else{n=i+1;if(n>=q.length){if(auto&&mp.repeat!=='all'){M.playing=false;updateUI();setStatus('That was the last song of your playlist ♡');return}n=0}}playTrack(q[n].id)}
+function prevTrack(){const q=queue();if(!q.length)return;if(M.kind&&M.pos>4){restart();return}const i=q.findIndex(t=>t.id===mp.currentId);playTrack(q[(i-1+q.length)%q.length].id)}
+function togglePlay(){const t=current();if(!t){const q=queue();if(q[0])playTrack(q[0].id);else setStatus('Add a song first ♡');return}
+ if(!M.kind||M.errored){playTrack(t.id);return}
+ if(M.kind==='url'&&M.audio){M.audio.paused?M.audio.play().catch(()=>setStatus('Press Play once more ♡')):M.audio.pause()}
+ else if(M.kind==='youtube'&&M.yt&&M.yt.playVideo){M.playing?M.yt.pauseVideo():M.yt.playVideo()}
+ else if(M.kind==='spotify'){M.sp?M.sp.togglePlay():setStatus('Use the play button inside the Spotify player.')}}
+function applyVolume(){if(M.audio){M.audio.volume=mp.volume/100;M.audio.muted=mp.muted}if(M.yt&&M.yt.setVolume){M.yt.setVolume(mp.volume);mp.muted?M.yt.mute():M.yt.unMute()}}
+
+function updateProgress(){const has=M.dur>0;$('mSeek').disabled=!has;if(!M.seeking)$('mSeek').value=has?Math.round(M.pos/M.dur*1000):0;$('tCur').textContent=fmtTime(M.pos);$('tDur').textContent=has?fmtTime(M.dur):'0:00'}
+function updateUI(){const t=current(),sp=M.kind==='spotify';
+ $('npTitle').textContent=t?t.title:'Pick a little song ♡';$('npArtist').textContent=t?(t.artist||'unknown artist'):'Your playlist is waiting — music only starts when you press Play';
+ $('npSrc').textContent=t?SRC[t.source]:'✧ ready';$('npSrc').className='src-tag'+(t?' '+t.source:'');$('npArt').classList.toggle('on',M.playing);$('npArt').textContent=t&&t.source==='youtube'?'▶':t&&t.source==='spotify'?'♫':'♪';
+ $('npOpen').hidden=!t||t.source==='url';if(t)$('npOpen').href=t.url;
+ $('mPlay').textContent=M.playing?'❚❚':'▶';$('mShuffle').setAttribute('aria-pressed',mp.shuffle);$('mRepeat').setAttribute('aria-pressed',mp.repeat!=='off');$('mRepeat').textContent=mp.repeat==='one'?'↻¹':'↻';$('mRepeat').title='Repeat: '+mp.repeat;
+ $('mVol').value=mp.volume;$('mVol').disabled=sp;$('mMute').disabled=sp;$('mMute').textContent=mp.muted||mp.volume==0?'🔇︎':'🔈︎';$('mVolNote').textContent=sp?'Spotify volume is set on your device':'';
+ $('mCompact').setAttribute('aria-pressed',mp.compact);$('mCompact').classList.toggle('active',mp.compact);updateProgress();updateMini();
+ document.querySelectorAll('.pl-item').forEach(li=>{const cur=li.dataset.id===mp.currentId;li.classList.toggle('current',cur);const b=li.querySelector('[data-act=play]');if(b)b.textContent=cur&&M.playing?'❚❚':'▶'})}
+function updateMini(){const t=current(),show=!!(t&&M.kind)&&document.body.dataset.page!=='settings';$('miniPlayer').hidden=!show;document.body.classList.toggle('has-mini',show);if(!t)return;$('miniTitle').textContent=t.title;$('miniSrc').textContent=SRC[t.source]+(M.playing?' · playing ♡':' · paused');$('miniPlay').textContent=M.playing?'❚❚':'▶'}
+
+function renderPlaylist(){$('plCount').textContent=playlist.length;document.querySelectorAll('.chips .chip').forEach(c=>c.classList.toggle('active',(c.dataset.fav==='1')===!!mp.favOnly));
+ const list=mp.favOnly?playlist.filter(t=>t.fav):playlist;
+ if(!list.length){$('plList').innerHTML=`<li class="pl-empty">☁️ ${mp.favOnly?'No favourites yet — tap ♡ on a song you love':'Your playlist is empty. Add your first song above ✧'}</li>`;return}
+ $('plList').innerHTML=list.map((t,i)=>{const cur=t.id===mp.currentId;
+  if(M.editId===t.id)return`<li class="pl-item editing" data-id="${t.id}"><input id="edTitle" value="${esc(t.title)}" aria-label="Song name"><input id="edArtist" value="${esc(t.artist)}" placeholder="Artist" aria-label="Artist"><div class="pl-btns"><button class="ib on" data-act="save" title="Save">✓</button><button class="ib" data-act="cancel" title="Cancel">✕</button></div></li>`;
+  return`<li class="pl-item${cur?' current':''}" data-id="${t.id}"><button class="ib fav" data-act="fav" aria-pressed="${!!t.fav}" title="Favourite">${t.fav?'♥':'♡'}</button><div class="pl-meta"><strong>${esc(t.title)}</strong><small>${esc(t.artist||'unknown artist')} · <span class="src-tag ${t.source}">${SRC[t.source]}</span></small></div>
+  <div class="pl-btns"><button class="ib on" data-act="play" title="Play">${cur&&M.playing?'❚❚':'▶'}</button><button class="ib" data-act="up" title="Move up" ${i===0?'disabled':''}>↑</button><button class="ib" data-act="down" title="Move down" ${i===list.length-1?'disabled':''}>↓</button><button class="ib" data-act="edit" title="Rename">✎</button><button class="ib del" data-act="del" title="Delete">✕</button></div></li>`}).join('')}
+$('plList').onclick=e=>{const b=e.target.closest('[data-act]');if(!b)return;const id=b.closest('.pl-item').dataset.id,t=playlist.find(x=>x.id===id),act=b.dataset.act;if(!t)return;
+ if(act==='play'){id===mp.currentId&&M.kind?togglePlay():playTrack(id);return}
+ if(act==='fav')t.fav=!t.fav;
+ if(act==='up'||act==='down'){const vis=mp.favOnly?playlist.filter(x=>x.fav):playlist,j=vis.indexOf(t)+(act==='up'?-1:1);if(vis[j]){const a=playlist.indexOf(t),c=playlist.indexOf(vis[j]);[playlist[a],playlist[c]]=[playlist[c],playlist[a]]}}
+ if(act==='edit')M.editId=id;if(act==='cancel')M.editId=null;
+ if(act==='save'){t.title=$('edTitle').value.trim()||t.title;t.artist=$('edArtist').value.trim();t.autoTitle=false;M.editId=null;toast('Song renamed ♡')}
+ if(act==='del'){if(!confirm(`Remove "${t.title}" from your playlist?`))return;if(id===mp.currentId){stopAll();mp.currentId=null}playlist=playlist.filter(x=>x.id!==id);toast('Song removed ♡')}
+ savePlaylist();saveMP();renderPlaylist();updateUI();if(act==='edit')$('edTitle').focus()};
+$('plList').onkeydown=e=>{if(e.target.matches('.editing input')&&e.key==='Enter'){e.preventDefault();e.target.closest('.pl-item').querySelector('[data-act=save]').click()}};
+document.querySelectorAll('.chips .chip').forEach(c=>c.onclick=()=>{mp.favOnly=c.dataset.fav==='1';saveMP();renderPlaylist()});
+$('mPlay').onclick=$('miniPlay').onclick=togglePlay;$('mNext').onclick=$('miniNext').onclick=()=>nextTrack(false);$('mPrev').onclick=$('miniPrev').onclick=prevTrack;$('miniOpen').onclick=()=>go('settings');
+$('mShuffle').onclick=()=>{mp.shuffle=!mp.shuffle;saveMP();updateUI()};
+$('mRepeat').onclick=()=>{mp.repeat={off:'all',all:'one',one:'off'}[mp.repeat]||'off';saveMP();updateUI();toast('Repeat: '+mp.repeat)};
+$('mVol').oninput=e=>{mp.volume=+e.target.value;if(mp.volume>0)mp.muted=false;applyVolume();saveMP();updateUI()};
+$('mMute').onclick=()=>{mp.muted=!mp.muted;applyVolume();saveMP();updateUI()};
+$('mCompact').onclick=()=>{mp.compact=!mp.compact;saveMP();const box=$('embedBox');if(M.kind==='youtube')box.classList.toggle('compact',mp.compact);updateUI()};
+$('mSeek').oninput=()=>{M.seeking=true;$('tCur').textContent=fmtTime($('mSeek').value/1000*M.dur)};
+$('mSeek').onchange=()=>{const s=$('mSeek').value/1000*M.dur;M.seeking=false;if(M.kind==='url'&&M.audio)M.audio.currentTime=s;else if(M.kind==='youtube'&&M.yt)M.yt.seekTo(s,true);else if(M.kind==='spotify'&&M.sp)M.sp.seek(s)};
+
+// ── Spotify account (OAuth handled by a Netlify Function; tokens stay in an encrypted httpOnly cookie) ──
+let spChecked=false;
+async function spotifyStatus(force){if(spChecked&&!force)return;spChecked=true;const box=$('spAccount');
+ try{const r=await fetch('/api/spotify/status',{credentials:'same-origin'});if(!r.ok)throw 0;const s=await r.json();
+  if(!s.configured)box.innerHTML='<span class="pill">Spotify account · not connected</span><small>Account login has not been switched on for this website yet. The Spotify player above works without it.</small>';
+  else if(!s.connected)box.innerHTML='<span class="pill">Spotify account · not connected</span><a class="btn small pink" href="/api/spotify/login">Connect Spotify</a><small>You log in on Spotify\'s own page — this website never asks for your password.</small>';
+  else{box.innerHTML=`<span class="pill green">Connected · ${esc(s.name)}</span><button class="btn soft small" id="spLoad">Load my playlists</button><button class="btn ghost small" id="spOut">Disconnect</button><div class="sp-pl" id="spPl"></div>`;
+   $('spLoad').onclick=loadMySpotify;$('spOut').onclick=async()=>{await fetch('/api/spotify/logout',{method:'POST'}).catch(()=>{});toast('Spotify disconnected');spotifyStatus(true)}}}
+ catch{box.innerHTML='<small>Spotify account status is unavailable right now. The Spotify player still works with any link.</small>'}}
+async function loadMySpotify(){const el=$('spPl');el.innerHTML='<small>Loading your playlists… ☁️</small>';
+ try{const r=await fetch('/api/spotify/playlists');if(r.status===401){spotifyStatus(true);toast('Please connect Spotify again');return}if(!r.ok)throw 0;const d=await r.json();
+  el.innerHTML=d.items.length?d.items.map((p,i)=>`<div><span>♫ ${esc(p.name)}</span><button class="btn soft small" data-i="${i}">＋ Add</button></div>`).join(''):'<small>No playlists found on your account.</small>';
+  el.onclick=e=>{const b=e.target.closest('[data-i]');if(!b)return;const p=d.items[+b.dataset.i],r2=buildTrack('spotify',p.url,p.name,p.owner||'');if(r2.track){playlist.push(r2.track);savePlaylist();renderPlaylist();toast('Playlist added ♡')}}}
+ catch{el.innerHTML='<small>Could not load your Spotify playlists. Try again in a moment.</small>'}}
+
+setAddSource(mp.addSource);renderPlaylist();updateUI();
+applySettings();resetForm();renderAll();
+{const q=new URLSearchParams(location.search),sp=q.get('spotify');if(sp||location.hash==='#settings'){go('settings');if(sp)toast({connected:'Spotify connected ♡',denied:'Spotify connection cancelled',error:'Spotify connection failed — please try again'}[sp]||'');history.replaceState(null,'',location.pathname)}}
+</script></body></html>
