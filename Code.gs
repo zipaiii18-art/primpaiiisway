@@ -11,13 +11,14 @@
  * so the website can import sheet data without a browser CORS preflight.
  */
 const TAB_NAME = 'Primpaii Orders';
-const HEADERS = ['Order ID','Tanggal Order','Aplikasi','Plan','User / Akun','Durasi','Nama Customer','Nama FH','Pemasukan','Pengeluaran','Diskon','Profit','Total Bersih','Status','Catatan','Updated At'];
+const HEADERS = ['Order ID','Tanggal Order','Aplikasi','Plan','User / Akun','Durasi','Nama Customer','Nama FH','Pemasukan','Pengeluaran','Diskon','Profit','Total Bersih','Status','Catatan','Updated At','User'];
 
 function getSheet_() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   let sh = ss.getSheetByName(TAB_NAME);
   if (!sh) sh = ss.insertSheet(TAB_NAME);
   if (sh.getLastRow() === 0) sh.appendRow(HEADERS);
+  else if (sh.getLastColumn() < HEADERS.length) sh.getRange(1,1,1,HEADERS.length).setValues([HEADERS]); // adds new columns (e.g. User) to older sheets
   return sh;
 }
 function doPost(e) {
@@ -30,7 +31,7 @@ function doPost(e) {
       Number(o.income)||0,Number(o.expense)||0,Number(o.discount)||0,
       (Number(o.income)||0)-(Number(o.expense)||0)-(Number(o.discount)||0),
       (Number(o.income)||0)-(Number(o.expense)||0)-(Number(o.discount)||0),
-      o.status,o.notes,o.updatedAt || new Date().toISOString()];
+      o.status,o.notes,o.updatedAt || new Date().toISOString(),o.users || ''];
     const last = sh.getLastRow();
     let row = -1;
     if (last > 1) {
@@ -52,7 +53,8 @@ function doGet(e) {
     id:String(r[0]),date:toIso_(r[1]),app:String(r[2]),plan:String(r[3]),account:String(r[4]),
     duration:parseInt(String(r[5]).split(' ')[0],10)||0,unit:unitFrom_(String(r[5])),
     customer:String(r[6]),fh:String(r[7]),income:Number(r[8])||0,expense:Number(r[9])||0,
-    discount:Number(r[10])||0,status:String(r[13]||'active'),notes:String(r[14]||'')
+    discount:Number(r[10])||0,status:String(r[13]||'active'),notes:String(r[14]||''),
+    updatedAt:r[15] instanceof Date?r[15].toISOString():String(r[15]||''),users:String(r[16]||'')
   })) : [];
   const data = JSON.stringify({ok:true,orders:rows});
   const callback = (e.parameter && e.parameter.callback || '').replace(/[^\w.$]/g,'');
